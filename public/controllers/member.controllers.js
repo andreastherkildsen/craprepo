@@ -1,7 +1,7 @@
 angular.module('memberModule', [])
 
 	.controller('MemberAddController', ['$scope', '$localStorage', function($scope, $localStorage){
-		if ($localStorage.members === undefined) {
+		if ($localStorage.members == null) {
   			var members = [
 				{
 					firstName: 'Dann',
