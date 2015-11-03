@@ -62,7 +62,7 @@
     </div>
     <div class="row">    
         <div class="col-md-4 post" ng-repeat="photo in photos">
-            <h3>{{photo.title}}</h3>
+            <p class="itemDescription">{{photo.title}}</p>
             <p>{{photo.description}}</p>
             <img src="data:{{photo.file.filetype}};base64,{{photo.file.base64}}">
         </div>
