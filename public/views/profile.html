@@ -16,6 +16,8 @@
 
                 <div class="input-group">
                     <label for="file">Vælg billede</label>
+                    <input type="text" ng-model="title" placeholder="TITEL">
+                    <input type="text" ng-model="description" placeholder="BESKRIVELSE">
                     <input type="file" ng-model="file" name="file" base-sixty-four-input required maxsize="500" accept="image/*">
                     <span class="help-block">
                         <ul>
@@ -60,7 +62,8 @@
     </div>
     <div class="row">    
         <div class="col-md-4 post" ng-repeat="photo in photos">
-        <h3>Billede</h3>
+            <h3>{{photo.title}}</h3>
+            <p>{{photo.description}}</p>
             <img src="data:{{photo.file.filetype}};base64,{{photo.file.base64}}">
         </div>
     </div>
