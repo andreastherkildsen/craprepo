@@ -11,58 +11,64 @@
 <div class="container" ng-controller="imgCtrl">
     <div class="row">
         <div class="col-md-12">
-                
-                   <form name="form">
-    <h3>Upload billede</h3>
-      <div class="input-group">
-        <label for="file">Vælg billede</label>
-        <input type="file" ng-model="file" name="file" base-sixty-four-input required maxsize="500" accept="image/*">
-        <span class="help-block">
-          <ul>
-            <li>Maksimum størrelse: 500kb</li>
-            <li>Filtype: image</li>
-          </ul>
-        </span>
-      </div>
-      <div class="alert" ng-class="{'alert-danger': form.file.$invalid, 'alert-success': form.file.$valid}">
-        form.file.$error:
-        {{form.file.$error}}
-      </div>
-    <b>Model Value:</b>
-    <table class="table table-bordered table-striped">
-      <tr>
-        <th>Filnavn</th>
-        <th>Filtype</th>
-        <th>Fil størrelse (<i><small>KB</small></i>)</th>
-        <th>base64</th>
-      </tr>
-      <tr ng-show="file">
-        <td>{{file.filename}}</td>
-        <td>{{file.filetype}}</td>
-        <td>{{file.filesize / 1000}}</td>
-        <td><b>{{file.base64.substring(0, 30)}}...</b></td>
-      </tr>
-      <tr>
-        <td colspan="4" ng-show="!file">
-          <small><i>Ingen fil er valgt!</i></small>
-        </td>
-      </tr>
-    </table>
+            <form name="form">
+                <h3>Upload billede</h3>
 
-    <button type="button" class="btn btn-default" ng-click="upload()"> Upload Billede</button>
-    <hr>
+                <div class="input-group">
+                    <label for="file">Vælg billede</label>
+                    <input type="file" ng-model="file" name="file" base-sixty-four-input required maxsize="500" accept="image/*">
+                    <span class="help-block">
+                        <ul>
+                        <li>Maksimum størrelse: 500kb</li>
+                        <li>Filtype: image</li>
+                        </ul>
+                    </span>
+                </div>
 
-    <ul>    
-    <li ng-repeat="photo in photos">
-        <img src="data:{{photo.file.filetype}};base64,{{photo.file.base64}}">
-    </li>
+                <div class="alert" ng-class="{'alert-danger': form.file.$invalid, 'alert-success': form.file.$valid}">
+                form.file.$error:
+                {{form.file.$error}}
+                </div>
+            </form>
+            
+            <b>Model Value:</b>
 
-    </ul>
+            <table class="table table-bordered table-striped">
+              <tr>
+                <th>Filnavn</th>
+                <th>Filtype</th>
+                <th>Fil størrelse (<i><small>KB</small></i>)</th>
+                <th>base64</th>
+              </tr>
+              <tr ng-show="file">
+                <td>{{file.filename}}</td>
+                <td>{{file.filetype}}</td>
+                <td>{{file.filesize / 1000}}</td>
+                <td><b>{{file.base64.substring(0, 30)}}...</b></td>
+              </tr>
+              <tr>
+                <td colspan="4" ng-show="!file">
+                  <small><i>Ingen fil er valgt!</i></small>
+                </td>
+              </tr>
+            </table>
 
-        
+            <button type="button" class="btn btn-default" ng-click="upload()"> Upload Billede</button>
+            
+            <hr>     
+        </div>
+    </div>
+    <div class="row">    
+        <div class="col-md-4 post" ng-repeat="photo in photos">
+        <h3>Billede</h3>
+            <img src="data:{{photo.file.filetype}};base64,{{photo.file.base64}}">
         </div>
     </div>
 </div>
+
+
+<!--
+
 <div class="container">
     <section id="content">
         <div class="row">
@@ -263,3 +269,5 @@
        
     </section>
 </div>
+
+-->
