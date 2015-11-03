@@ -403,9 +403,40 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 }
 
 .post{
+    height:250px;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+    border-radius:5px;
+    margin-bottom:30px;
 
     img {
         width:100%;
+    }
+
+    .banner{
+        width:100%;
+        position:absolute;
+        padding:15px;
+        left:0;
+        bottom:0;
+        background-color:#eee; 
+        border-radius: 0px 0px 5px 5px;
+
+        .rating{
+
+            .thumbs{
+                margin-right:30px;
+            }
+
+            .fa{
+                cursor:pointer;
+            }
+        }
+
+        .date{
+            font-size:12px;
+        }
     }
 }
 

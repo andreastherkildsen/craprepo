@@ -306,8 +306,29 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
   text-transform: uppercase;
   font-weight: bold; }
 
-.post img {
-  width: 100%; }
+.post {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 5px;
+  margin-bottom: 30px; }
+  .post img {
+    width: 100%; }
+  .post .banner {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+    left: 0;
+    bottom: 0;
+    background-color: #eee;
+    border-radius: 0px 0px 5px 5px; }
+    .post .banner .rating .thumbs {
+      margin-right: 30px; }
+    .post .banner .rating .fa {
+      cursor: pointer; }
+    .post .banner .date {
+      font-size: 12px; }
 
 /**********    FOOTER     **********/
 #footer {

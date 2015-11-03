@@ -11,7 +11,12 @@ angular.module('imgModule', ['ngStorage', 'naif.base64'])
     $scope.photos =  $scope.$storage.photos;
 
     $scope.upload = function() { console.log($scope.file);
-      $scope.$storage.photos.push({file:$scope.file, title:$scope.title, description:$scope.description});
+      $scope.$storage.photos.push({
+          file:$scope.file, 
+          title:$scope.title, 
+          description:$scope.description,
+          createdDate: new Date()
+        });
       $scope.file = '';
       $scope.photos = $scope.$storage.photos;
     }

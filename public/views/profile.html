@@ -27,10 +27,7 @@
                     </span>
                 </div>
 
-                <div class="alert" ng-class="{'alert-danger': form.file.$invalid, 'alert-success': form.file.$valid}">
-                form.file.$error:
-                {{form.file.$error}}
-                </div>
+                
             </form>
             
             <b>Model Value:</b>
@@ -61,216 +58,20 @@
         </div>
     </div>
     <div class="row">    
-        <div class="col-md-4 post" ng-repeat="photo in photos">
-            <p class="itemDescription">{{photo.title}}</p>
-            <p>{{photo.description}}</p>
-            <img src="data:{{photo.file.filetype}};base64,{{photo.file.base64}}">
+        <div class="col-md-3 post" ng-repeat="photo in photos">
+            <div class="post" style="background-image:url('data:{{photo.file.filetype}};base64,{{photo.file.base64}}')">
+                <div class="description">                    
+                    <p class="itemDescription">{{photo.title}}</p>
+                </div> 
+                <div class="banner">
+                    <div class="rating">
+                        <p><span class="fa fa-thumbs-o-up thumbs"> 39</span><span class="fa fa-comment-o"> 3</span></p>
+                    </div>
+                    <div class="date">
+                        {{photo.createdDate | date}}
+                    </div>
+                </div>               
+            </div>
         </div>
     </div>
 </div>
-
-
-<!--
-
-<div class="container">
-    <section id="content">
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <a href="#">
-                <div class="item">
-                    <div class="description">
-                        <p class="itemDescription">Hello world
-                        <br />How are you today?</p>
-                    </div>
-                </div>
-                    <div class="row top">
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-                            <p><i class="fa fa-thumbs-o-up"></i>&nbsp; 39</p>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-                            <p><i class="fa fa-comment-o"></i>&nbsp; 3</p>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-
-                        </div>
-                    </div>
-                </a>
-                <p class="created">Created: 27/5 - 2015: 4:45 pm</p>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="#">
-                    <div class="item">
-                        <div class="description">
-                            <p class="itemDescription">
-                                Hello world
-                                <br />How are you today?
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row top">
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-                            <p><i class="fa fa-thumbs-o-up"></i>&nbsp; 39</p>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-                            <p><i class="fa fa-comment-o"></i>&nbsp; 3</p>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-
-                        </div>
-                    </div>
-                </a>
-                <p class="created">Created: 27/5 - 2015: 4:45 pm</p>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="#">
-                    <div class="item">
-                        <div class="description">
-                            <p class="itemDescription">
-                                Hello world
-                                <br />How are you today?
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row top">
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-                            <p><i class="fa fa-thumbs-o-up"></i>&nbsp; 39</p>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-                            <p><i class="fa fa-comment-o"></i>&nbsp; 3</p>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-
-                        </div>
-                    </div>
-                </a>
-                <p class="created">Created: 27/5 - 2015: 4:45 pm</p>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="#">
-                    <div class="item">
-                        <div class="description">
-                            <p class="itemDescription">
-                                Hello world
-                                <br />How are you today?
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row top">
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-                            <p><i class="fa fa-thumbs-o-up"></i>&nbsp; 39</p>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-                            <p><i class="fa fa-comment-o"></i>&nbsp; 3</p>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-
-                        </div>
-                    </div>
-                </a>
-                <p class="created">Created: 27/5 - 2015: 4:45 pm</p>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <a href="#">
-                    <div class="item">
-                        <div class="description">
-                            <p class="itemDescription">
-                                Hello world
-                                <br />How are you today?
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row top">
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-                            <p><i class="fa fa-thumbs-o-up"></i>&nbsp; 39</p>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-                            <p><i class="fa fa-comment-o"></i>&nbsp; 3</p>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-
-                        </div>
-                    </div>
-                </a>
-                <p class="created">Created: 27/5 - 2015: 4:45 pm</p>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="#">
-                    <div class="item">
-                        <div class="description">
-                            <p class="itemDescription">
-                                Hello world
-                                <br />How are you today?
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row top">
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-                            <p><i class="fa fa-thumbs-o-up"></i>&nbsp; 39</p>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-                            <p><i class="fa fa-comment-o"></i>&nbsp; 3</p>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-
-                        </div>
-                    </div>
-                </a>
-                <p class="created">Created: 27/5 - 2015: 4:45 pm</p>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="#">
-                    <div class="item">
-                        <div class="description">
-                            <p class="itemDescription">
-                                Hello world
-                                <br />How are you today?
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row top">
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-                            <p><i class="fa fa-thumbs-o-up"></i>&nbsp; 39</p>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-                            <p><i class="fa fa-comment-o"></i>&nbsp; 3</p>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-
-                        </div>
-                    </div>
-                </a>
-                <p class="created">Created: 27/5 - 2015: 4:45 pm</p>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <a href="#">
-                    <div class="item">
-                        <div class="description">
-                            <p class="itemDescription">
-                                Hello world
-                                <br />How are you today?
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row top">
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-                            <p><i class="fa fa-thumbs-o-up"></i>&nbsp; 39</p>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-                            <p><i class="fa fa-comment-o"></i>&nbsp; 3</p>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4">
-
-                        </div>
-                    </div>
-                </a>
-                <p class="created">Created: 27/5 - 2015: 4:45 pm</p>
-            </div>
-        </div>
-       
-    </section>
-</div>
-
--->
