@@ -1,0 +1,30 @@
+{
+  "name": "meanaoo",
+  "version": "1.0.0",
+  "description": "mean gulp",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.7.13",
+    "gulp": "^3.9.0",
+    "del": "^1.2.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-plumber": "^0.6.6",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.2.0"
+  },
+  "devDependencies": {
+    "gulp-sass": "^2.1.0",
+    "gulp-uglify": "^1.4.2"
+  },
+  "scripts": {
+    "test": "gulp",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://andrhtx@bitbucket.org/andrhtx/meanapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/andrhtx/meanapp#readme"
+}

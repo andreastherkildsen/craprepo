@@ -1,0 +1,265 @@
+<header ng-include="'templates/headerlogin.html'"></header>
+<div class="container-fluid">
+    <section id="profileBanner">
+            <h1 class="profileHeader text-center">{{member.firstName}} {{member.lastName}}</h1>
+            <div class="profileImage">
+                <img class="img-circle img-responsive" alt="Kim Johansen" src="Images/KimJohansen.jpg" />
+            </div>
+            <h2 class="profileHeader text-center">Aalborg</h2>
+    </section>
+</div>
+<div class="container" ng-controller="imgCtrl">
+    <div class="row">
+        <div class="col-md-12">
+                
+                   <form name="form">
+    <h3>Upload billede</h3>
+      <div class="input-group">
+        <label for="file">Vælg billede</label>
+        <input type="file" ng-model="file" name="file" base-sixty-four-input required maxsize="500" accept="image/*">
+        <span class="help-block">
+          <ul>
+            <li>Maksimum størrelse: 500kb</li>
+            <li>Filtype: image</li>
+          </ul>
+        </span>
+      </div>
+      <div class="alert" ng-class="{'alert-danger': form.file.$invalid, 'alert-success': form.file.$valid}">
+        form.file.$error:
+        {{form.file.$error}}
+      </div>
+    <b>Model Value:</b>
+    <table class="table table-bordered table-striped">
+      <tr>
+        <th>Filnavn</th>
+        <th>Filtype</th>
+        <th>Fil størrelse (<i><small>KB</small></i>)</th>
+        <th>base64</th>
+      </tr>
+      <tr ng-show="file">
+        <td>{{file.filename}}</td>
+        <td>{{file.filetype}}</td>
+        <td>{{file.filesize / 1000}}</td>
+        <td><b>{{file.base64.substring(0, 30)}}...</b></td>
+      </tr>
+      <tr>
+        <td colspan="4" ng-show="!file">
+          <small><i>Ingen fil er valgt!</i></small>
+        </td>
+      </tr>
+    </table>
+
+    <button type="button" class="btn btn-default" ng-click="upload()"> Upload Billede</button>
+    <hr>
+
+    <ul>    
+    <li ng-repeat="photo in photos">
+        <img src="data:{{photo.file.filetype}};base64,{{photo.file.base64}}">
+    </li>
+
+    </ul>
+
+        
+        </div>
+    </div>
+</div>
+<div class="container">
+    <section id="content">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <a href="#">
+                <div class="item">
+                    <div class="description">
+                        <p class="itemDescription">Hello world
+                        <br />How are you today?</p>
+                    </div>
+                </div>
+                    <div class="row top">
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <p><i class="fa fa-thumbs-o-up"></i>&nbsp; 39</p>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <p><i class="fa fa-comment-o"></i>&nbsp; 3</p>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+
+                        </div>
+                    </div>
+                </a>
+                <p class="created">Created: 27/5 - 2015: 4:45 pm</p>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <a href="#">
+                    <div class="item">
+                        <div class="description">
+                            <p class="itemDescription">
+                                Hello world
+                                <br />How are you today?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row top">
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <p><i class="fa fa-thumbs-o-up"></i>&nbsp; 39</p>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <p><i class="fa fa-comment-o"></i>&nbsp; 3</p>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+
+                        </div>
+                    </div>
+                </a>
+                <p class="created">Created: 27/5 - 2015: 4:45 pm</p>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <a href="#">
+                    <div class="item">
+                        <div class="description">
+                            <p class="itemDescription">
+                                Hello world
+                                <br />How are you today?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row top">
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <p><i class="fa fa-thumbs-o-up"></i>&nbsp; 39</p>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <p><i class="fa fa-comment-o"></i>&nbsp; 3</p>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+
+                        </div>
+                    </div>
+                </a>
+                <p class="created">Created: 27/5 - 2015: 4:45 pm</p>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <a href="#">
+                    <div class="item">
+                        <div class="description">
+                            <p class="itemDescription">
+                                Hello world
+                                <br />How are you today?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row top">
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <p><i class="fa fa-thumbs-o-up"></i>&nbsp; 39</p>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <p><i class="fa fa-comment-o"></i>&nbsp; 3</p>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+
+                        </div>
+                    </div>
+                </a>
+                <p class="created">Created: 27/5 - 2015: 4:45 pm</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <a href="#">
+                    <div class="item">
+                        <div class="description">
+                            <p class="itemDescription">
+                                Hello world
+                                <br />How are you today?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row top">
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <p><i class="fa fa-thumbs-o-up"></i>&nbsp; 39</p>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <p><i class="fa fa-comment-o"></i>&nbsp; 3</p>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+
+                        </div>
+                    </div>
+                </a>
+                <p class="created">Created: 27/5 - 2015: 4:45 pm</p>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <a href="#">
+                    <div class="item">
+                        <div class="description">
+                            <p class="itemDescription">
+                                Hello world
+                                <br />How are you today?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row top">
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <p><i class="fa fa-thumbs-o-up"></i>&nbsp; 39</p>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <p><i class="fa fa-comment-o"></i>&nbsp; 3</p>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+
+                        </div>
+                    </div>
+                </a>
+                <p class="created">Created: 27/5 - 2015: 4:45 pm</p>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <a href="#">
+                    <div class="item">
+                        <div class="description">
+                            <p class="itemDescription">
+                                Hello world
+                                <br />How are you today?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row top">
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <p><i class="fa fa-thumbs-o-up"></i>&nbsp; 39</p>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <p><i class="fa fa-comment-o"></i>&nbsp; 3</p>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+
+                        </div>
+                    </div>
+                </a>
+                <p class="created">Created: 27/5 - 2015: 4:45 pm</p>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <a href="#">
+                    <div class="item">
+                        <div class="description">
+                            <p class="itemDescription">
+                                Hello world
+                                <br />How are you today?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row top">
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <p><i class="fa fa-thumbs-o-up"></i>&nbsp; 39</p>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <p><i class="fa fa-comment-o"></i>&nbsp; 3</p>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+
+                        </div>
+                    </div>
+                </a>
+                <p class="created">Created: 27/5 - 2015: 4:45 pm</p>
+            </div>
+        </div>
+       
+    </section>
+</div>
