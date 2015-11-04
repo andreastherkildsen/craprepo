@@ -70,6 +70,13 @@
                     <div class="date">
                         {{photo.createdDate | date}}
                     </div>
+
+                     <div class="date" ng-controller="geolocCtrl">
+                            <p><b>Lokation</b></p>
+                              <p>Latitude: {{location.coords.latitude}}</p>
+                              <p>Longitude: {{location.coords.longitude}}</p>
+                
+                    </div>
                 </div>               
             </div>
         </div>

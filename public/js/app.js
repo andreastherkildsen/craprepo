@@ -6,7 +6,8 @@
   'ui.router',
   'ngStorage',
   'imgModule',
-  'memberModule'
+  'memberModule',
+  'geolocationModule'
 ])
 
 .config(function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $locationProvider) {

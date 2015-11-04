@@ -15,6 +15,7 @@ angular.module('imgModule', ['ngStorage', 'naif.base64'])
           file:$scope.file, 
           title:$scope.title, 
           description:$scope.description,
+          
           createdDate: new Date()
         });
       $scope.file = '';
