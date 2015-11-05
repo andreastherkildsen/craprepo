@@ -36,18 +36,6 @@ angular.module('memberModule', [])
 		console.log($localStorage.members);
 	}])
 
-	.controller('AddPostController', ['$scope', '$localStorage', function($scope, $localStorage){
-		$scope.member = $localStorage.members[2];
-
-		/*Jeg kan ikke få fat i filnavnet... Tanken var at gemme billedet i en mappe og så gemme navnet i localstorage og så sætte det sammen til sidst, når posten skal vises*/
-		$scope.addPost = function(){
-			var post = {
-				fileName : $scope.uploadFile.value
-			}
-			console.log(post.fileName);
-		};
-	}])
-
 /*
    .controller('MemberController', ['$scope', '$http', function ($scope, $http){
    	$http.get('./member').success(function (data){

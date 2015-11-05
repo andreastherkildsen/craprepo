@@ -8,7 +8,7 @@
             <h2 class="profileHeader text-center">Aalborg</h2>
     </section>
 </div>
-<div class="container" ng-controller="imgCtrl">
+<div class="container">
     <div class="row">
         <div class="col-md-12">
             <form name="form">
@@ -26,12 +26,8 @@
                         </ul>
                     </span>
                 </div>
-
-                
             </form>
-            
             <b>Model Value:</b>
-
             <table class="table table-bordered table-striped">
               <tr>
                 <th>Filnavn</th>
@@ -67,15 +63,16 @@
                     <div class="rating">
                         <p><span class="fa fa-thumbs-o-up thumbs"> 39</span><span class="fa fa-comment-o"> 3</span></p>
                     </div>
+                    <div class="map">
+                        <span class="fa fa-map-marker"></span>
+                    </div>
                     <div class="date">
                         {{photo.createdDate | date}}
                     </div>
-
-                     <div class="date" ng-controller="geolocCtrl">
-                            <p><b>Lokation</b></p>
-                              <p>Latitude: {{location.coords.latitude}}</p>
-                              <p>Longitude: {{location.coords.longitude}}</p>
-                
+                    <div class="location">
+                        <p><b>Location</b></p>
+                        <p>Latitude: {{myPosition.coords.latitude}}</p>
+                        <p>Longitude: {{myPosition.coords.longitude}}</p>
                     </div>
                 </div>               
             </div>

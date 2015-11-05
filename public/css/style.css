@@ -323,12 +323,24 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     bottom: 0;
     background-color: #eee;
     border-radius: 0px 0px 5px 5px; }
-    .post .banner .rating .thumbs {
-      margin-right: 30px; }
-    .post .banner .rating .fa {
-      cursor: pointer; }
+    .post .banner .rating {
+      display: inline-block; }
+      .post .banner .rating .thumbs {
+        margin-right: 30px; }
+      .post .banner .rating .fa {
+        cursor: pointer; }
+    .post .banner .map {
+      display: inline-block;
+      float: right; }
+      .post .banner .map span {
+        margin-top: 5px;
+        color: #c0392b; }
     .post .banner .date {
       font-size: 12px; }
+    .post .banner .location {
+      display: none; }
+    .post .banner .show {
+      display: block; }
 
 /**********    FOOTER     **********/
 #footer {

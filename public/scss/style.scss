@@ -426,6 +426,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
         border-radius: 0px 0px 5px 5px;
 
         .rating{
+            display:inline-block;
 
             .thumbs{
                 margin-right:30px;
@@ -436,11 +437,31 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
             }
         }
 
+
+        .map{
+            display:inline-block;
+            float:right;
+
+            span{
+                margin-top:5px;
+                color:#c0392b;
+            }
+        }
+
         .date{
             font-size:12px;
         }
+
+        .location{
+            display:none;
+        }
+
+        .show{
+            display:block;
+        }
     }
 }
+
 
 /**********    FOOTER     **********/
 

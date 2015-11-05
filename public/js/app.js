@@ -6,8 +6,7 @@
   'ui.router',
   'ngStorage',
   'imgModule',
-  'memberModule',
-  'geolocationModule'
+  'memberModule'
 ])
 
 .config(function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $locationProvider) {
@@ -30,7 +29,7 @@
        .state('profile', {
         url: '/profile',
         templateUrl: 'views/profile.html',
-        controller: 'AddPostController'
+        controller: 'imgCtrl'
        });
 
        $locationProvider.html5Mode(true);
