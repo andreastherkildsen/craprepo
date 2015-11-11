@@ -16,6 +16,9 @@
 
 //CUSTOM - what evar' 
 
+$valid:#2ecc71;
+$invalid:#e74c3c;
+
 body {    font-family: 'Open Sans', sans-serif !important;
     font-size: 14px;
     line-height: 1.42857143;
@@ -284,6 +287,18 @@ input[type="text"], input[type="password"], input[type="email"], input[type="num
   border: none;
   border-bottom: solid 2px #c9c9c9;
   transition: border 0.3s;
+
+  &.ng-valid{
+    border-bottom: solid 2px $valid;
+  }
+
+  &.ng-invalid{
+    border-bottom: solid 2px $invalid;
+  }
+
+  &.ng-pristine{
+    border-bottom: solid 2px #c9c9c9;
+  }
 }
 
 input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="number"]:focus  {

@@ -3,20 +3,20 @@ angular.module('memberModule', [])
 	.controller('MemberAddController', ['$scope', '$localStorage', function($scope, $localStorage){
 		if ($localStorage.members == null) {
   			var members = [
-				{
-					firstName: 'Dann',
-					lastName: 'Bos',
-					email: 'dannbos@hotmail.com',
-					phone: '60452216',
-					password: '1234'
-				},
-				{
-					firstName: 'John',
-					lastName: 'Doe',
-					email: 'J_Doe@nowhere.com',
-					phone: '88888888',
-					password: '1234'
-				}
+				// {
+				// 	firstName: 'Dann',
+				// 	lastName: 'Bos',
+				// 	email: 'dannbos@hotmail.com',
+				// 	phone: '60452216',
+				// 	password: '1234'
+				// },
+				// {
+				// 	firstName: 'John',
+				// 	lastName: 'Doe',
+				// 	email: 'J_Doe@nowhere.com',
+				// 	phone: '88888888',
+				// 	password: '1234'
+				// }
 			];
 
 			$localStorage.members = members;
