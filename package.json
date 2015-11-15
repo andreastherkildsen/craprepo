@@ -1,30 +1,18 @@
 {
-  "name": "meanaoo",
-  "version": "1.0.0",
-  "description": "mean gulp",
-  "main": "gulpfile.js",
-  "dependencies": {
-    "browser-sync": "^2.7.13",
-    "gulp": "^3.9.0",
-    "del": "^1.2.0",
-    "gulp-autoprefixer": "^2.3.1",
-    "gulp-plumber": "^0.6.6",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.2.0"
-  },
-  "devDependencies": {
-    "gulp-sass": "^2.1.0",
-    "gulp-uglify": "^1.4.2"
-  },
+  "name": "craprepo",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "gulp",
-    "start": "node server.js"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://andrhtx@bitbucket.org/andrhtx/meanapp.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/andrhtx/meanapp#readme"
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "ejs": "~2.3.3",
+    "express": "~4.13.1",
+    "morgan": "~1.6.1",
+    "passport": "^0.3.2",
+    "serve-favicon": "~2.3.0"
+  }
 }
