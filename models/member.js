@@ -1,11 +1,12 @@
 var mongoose = require('mongoose');
-var timestamps = require('mongoose-times');
 var Schema = mongoose.Schema; 
 
 
-var MemberSchema = new Schema({
+var userSchema = new Schema({
 	name: String, 
-	email: String
+	email: String,
+	password: String, //Bliver hashet af Passport
+	created_at: {type: Date, default: Date.now}
 });
 
-module.exports = mongoose.model('Member', MemberSchema);
+module.exports = mongoose.model('User', userSchema);

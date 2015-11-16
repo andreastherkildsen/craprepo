@@ -12,6 +12,9 @@ var mongodb      = require('mongodb');
 
 ////////////////////////CONNECT TIL VORES DB////////////////////////
 mongoose.connect('mongodb://localhost');
+//Skemaer til DB
+require('./models/member.js');
+require('./models/post.js');
 
 ////////////////////////ROUTES - Kald i mellem DB og Client////////////////////////
 var routes       = require('./routes/index');
