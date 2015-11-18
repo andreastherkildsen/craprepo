@@ -4,6 +4,7 @@ var bodyParser   = require('body-parser');
 var cookieParser = require('cookie-parser');
 var path         = require('path');
 var passport     = require('passport');
+var authenticate = require('./routes/authenticate')(passport);
 var logger       = require('morgan');
 var mongoose     = require('mongoose');
 var mongodb      = require('mongodb');
@@ -13,6 +14,19 @@ var port         = 1337;
 
 //Connect til mongooseDB
 mongoose.connect('mongodb://localhost/');
+
+//MODELS
+
+var router = express.Router();
+var User = require('./models/users');
+var Post = require('./models/post');
+
+//ROUTES 
+
+require('./routes/users.js')(router, mongoose, User);
+require('./routes/post.js')(router, mongoose, Post);
+
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -25,21 +39,25 @@ app.use(function(req, res, next) {
 	next();
 });
 
+// uncomment after placing your favicon in /public
+//app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
+app.use(passport.session());
+
+//// Initialize Passport
+var initPassport = require('./passport-init');
+initPassport(passport);
+
+
+
+
 app.get('/', function(req, res){
 	res.sendFile('../index.html');
 });
-
-
-//MODELS
-
-var router = express.Router();
-var User = require('./models/users');
-var Post = require('./models/post');
-
-//ROUTES 
-
-require('./routes/users.js')(router, mongoose, User);
-require('./routes/post.js')(router, mongoose, Post);
 
 
 // middleware to use for all requests
@@ -59,6 +77,7 @@ router.get('/', function(req, res) {
 
 
 app.use('/api', router);
+app.use('/auth', authenticate);
 
 //Besked til console når der oprettes/slettes i DB
 router.use(function(res, req, next) {

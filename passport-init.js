@@ -1,9 +1,6 @@
-var mongoose = require('mongoose');
-//Vores skema - til validation   
+var mongoose = require('mongoose');   
 var User = mongoose.model('User');
-//Vi bruger localStrategy i og med, det kører localhost
 var LocalStrategy   = require('passport-local').Strategy;
-//bCrypt Hashing the shit out of strings since 2k13. 
 var bCrypt = require('bcrypt-nodejs');
 
 module.exports = function(passport){
