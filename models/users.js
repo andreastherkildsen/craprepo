@@ -3,12 +3,12 @@ var Schema = mongoose.Schema;
 
 
 var userSchema = new Schema({
+	username: String,  
+	password: String, //Bliver hashet af Passport
 	firstName: String,
 	lastName: String,
 	email: String,
 	phone: Number, 
-	username: String,  
-	password: String, //Bliver hashet af Passport
 	created_at: {type: Date, default: Date.now}
 });
 
