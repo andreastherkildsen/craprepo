@@ -11,8 +11,8 @@ MONGODB
 
 START EXPRESS
 1. CD til roden
-2. NPM START (Express)
-3. Åben browser -> Localhost:3000
+2. node server.js (Express)
+3. Åben browser -> Localhost:1337
 5. See magic and hax! 
 
 FOR AT UPLOADE ÆNDRINGER: 

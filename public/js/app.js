@@ -18,7 +18,7 @@
        .state('home', {
       url: '/',
       templateUrl: 'views/main.html',
-      controller: 'MemberAddController'
+      controller: 'authController'
     })
 
     	 .state('frontpage', {
