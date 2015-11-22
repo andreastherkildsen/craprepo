@@ -17,8 +17,7 @@
       $stateProvider
        .state('home', {
       url: '/',
-      templateUrl: 'views/main.html',
-      controller: 'authController'
+      templateUrl: 'views/main.html'
     })
 
     	 .state('frontpage', {

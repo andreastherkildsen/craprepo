@@ -13,21 +13,25 @@
                     <h3 class="signupTitle">Sign up today</h3><br />
                     <div class="row">
                         <div class="col-md-6">
-                            <input type="text" class="TextboxSignup" data-type="text" ng-model="firstName" name="Firstname" required placeholder="Firstname" aria-label="Firstname" /><br class="visible-sm visible-xs" />
+                            <input type="text" class="TextboxSignup" data-type="text" ng-model="user.firstName" name="Firstname" required placeholder="Firstname" aria-label="Firstname" /><br class="visible-sm visible-xs" />
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="TextboxSignup" data-type="text" ng-model="lastName" name="Lastname" required placeholder="Lastname" aria-label="Lastname" />
+                            <input type="text" class="TextboxSignup" data-type="text" ng-model="user.lastName" name="Lastname" required placeholder="Lastname" aria-label="Lastname" />
+                        </div>
+
+                        <div class="col-md-12">
+                            <input type="text" class="TextboxSignup" data-type="text" ng-model="user.username" name="Username" required placeholder="Username" aria-label="Username" />
                         </div>
                     </div>
                     <br />
                     <p>
-                        <input type="email" class="TextboxSignup" data-type="text" ng-model="email" name="Email" required placeholder="Email" aria-label="Email" />
+                        <input type="email" class="TextboxSignup" data-type="text" ng-model="user.email" name="Email" required placeholder="Email" aria-label="Email" />
                     </p>
                     <p>
-                        <input type="number" class="TextboxSignup" data-type="text" ng-model="phone" name="Phone" required placeholder="Phone" aria-label="Phone" />
+                        <input type="number" class="TextboxSignup" data-type="text" ng-model="user.phone" name="Phone" required placeholder="Phone" aria-label="Phone" />
                     </p>
                     <p>
-                        <input type="password" class="TextboxSignup" data-type="text" ng-model="password" name="Password" required placeholder="Password" aria-label="Password" />
+                        <input type="password" class="TextboxSignup" data-type="text" ng-model="user.password" name="Password" required placeholder="Password" aria-label="Password" />
                     </p>
                     <p class="text-center">
                     <input type="submit" class="frontBtn fullWidth" value="Sign up">

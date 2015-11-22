@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var path         = require('path');
 var passport     = require('passport');
 var authenticate = require('./routes/authenticate')(passport);
+var post         = require('./routes/post');
 var logger       = require('morgan');
 var fs           = require('fs-extra');
 var uuid         = require('node-uuid');
@@ -52,6 +53,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use('/auth', authenticate);
+
 
 //// Initialize Passport
 var initPassport = require('./passport-init');
