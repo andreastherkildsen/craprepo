@@ -13,11 +13,12 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <h1 class="slogan hidden-xs">Connect with your friends on the new social platform</h1>
-                <ul class="nav navbar-nav navbar-right" bsActiveLink>
-                    <li><input type="email" class="textBoxLogin" data-type="text" name="Email" aria-required="true" placeholder="Email" aria-label="Email" /></li>
-                    <li><input type="password" class="textBoxLogin" data-type="text" name="Password" aria-required="true" placeholder="Password" aria-label="Password" /></li>
-                    <li><p class="text-center"><a href="/profile" class="frontBtn buttonLogin">Log in</a></p></li>
-               </ul> 
+                <form class="nav navbar-nav navbar-right" ng-submit="login()" bsActiveLink>
+                    <li><input type="username" ng-model="user.username" class="textBoxLogin" data-type="text" name="Username" aria-required="true" placeholder="Username" aria-label="Username" /></li>
+                    <li><input type="password" ng-model="user.password" class="textBoxLogin" data-type="text" name="Password" aria-required="true" placeholder="Password" aria-label="Password" /></li>
+                    <li><input type="submit" value="Log in" class="frontBtn buttonLogin"/>
+                    </li>
+               </form> 
             </div>
         </div>
     </nav>

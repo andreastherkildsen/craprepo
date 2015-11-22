@@ -6,8 +6,19 @@
   'ui.router',
   'ngStorage',
   'imgModule',
-  'memberModule'
-])
+  'memberzModule',
+  'postModule',
+  'postServiceModule'
+]).run(function($rootScope) {
+  $rootScope.authenticated = false;
+  $rootScope.current_user = '';
+  
+  $rootScope.signout = function(){
+      $http.get('auth/signout');
+      $rootScope.authenticated = false;
+      $rootScope.current_user = '';
+  };
+})
 
 .config(function($stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider, $locationProvider) {
  	
@@ -17,12 +28,15 @@
       $stateProvider
        .state('home', {
       url: '/',
-      templateUrl: 'views/main.html'
+      templateUrl: 'views/main.html',
+      controller: 'MemberCtrl'
     })
 
     	 .state('frontpage', {
       url: '/frontpage',
-      templateUrl: 'views/frontpage.html'
+      templateUrl: 'views/frontpage.html',
+      controller: 'postCtrl'
+
           })
 
        .state('profile', {
