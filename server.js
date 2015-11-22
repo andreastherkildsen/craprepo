@@ -6,6 +6,9 @@ var path         = require('path');
 var passport     = require('passport');
 var authenticate = require('./routes/authenticate')(passport);
 var logger       = require('morgan');
+var fs           = require('fs-extra');
+var uuid         = require('node-uuid');
+var multiparty   = require('multiparty');
 var mongoose     = require('mongoose');
 var mongodb      = require('mongodb');
 var app          = express();
@@ -20,11 +23,13 @@ mongoose.connect('mongodb://localhost/');
 var router = express.Router();
 var User = require('./models/users');
 var Post = require('./models/post');
+//var imageUser = require('./models/imagesuser');
 
 //ROUTES 
 
 require('./routes/users.js')(router, mongoose, User);
 require('./routes/post.js')(router, mongoose, Post);
+//require('./routes/imageuser.js')(router, mongoose, imageUser);
 
 
 
