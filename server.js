@@ -98,3 +98,5 @@ router.use(function(res, req, next) {
 //Consol besked ved start af server
 app.listen(port);
 console.log('We are live on port' + port);
+
+module.exports = app; 

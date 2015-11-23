@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 var userSchema = new Schema({
 	username: String,  
-	password: String, //Bliver hashet af Passport
+	password: String,
 	firstName: String,
 	lastName: String,
 	email: String,
