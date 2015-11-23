@@ -41,11 +41,17 @@
 
     })
 
-       .state('profile', {
-        url: '/profile',
-        templateUrl: 'views/profile.html',
-        controller: 'MemberCtrl'
-       });
+     .state('profile', {
+       url: '/profile',
+      templateUrl: 'views/profile.html',
+      controller: 'MemberCtrl'
+     })
+
+     .state('newpost', {
+      url: '/newpost',
+      templateUrl: 'views/newpost.html',
+      controller: 'postCtrl'
+     });
 
 
 

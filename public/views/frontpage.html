@@ -5,7 +5,11 @@
 	</section>
 
 	<div class="col-md-3 post" ng-repeat="post in posts">
-		<h1>Hej</h1>
+		<h1>{{post.title}}</h1>
+		<p>{{post.tags}}</p>
+		<h3>{{post.desc}}</h3>
+		<p>{{post.created_by}}</p>
+		<p>{{post.created_at}}</p>
 
 	</div>
 </div>

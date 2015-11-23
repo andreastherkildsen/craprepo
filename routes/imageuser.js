@@ -20,7 +20,7 @@ module.exports = function(routes, mongoose, imageUser) {
            	user.images.forEach(function(image) {
               fs.unlink(imagedest + image);
             });
-            //Find hotel og slet alle evt. billeder hvis der er nogen.
+            //Find user og slet alle evt. billeder hvis der er nogen.
             mongoose.model('users').findByIdAndUpdate(
               user_id,
               {$set: { images: [] }}, function(err, affected) {
