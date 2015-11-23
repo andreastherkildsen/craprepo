@@ -5,6 +5,7 @@
  angular.module('angular', [
   'ui.router',
   'ngStorage',
+  'ngResource',
   'imgModule',
   'memberzModule',
   'postModule',
@@ -38,13 +39,15 @@
       templateUrl: 'views/frontpage.html',
       controller: 'postCtrl'
 
-          })
+    })
 
        .state('profile', {
         url: '/profile',
         templateUrl: 'views/profile.html',
         controller: 'MemberCtrl'
        });
+
+
 
        $locationProvider.html5Mode(true);
 

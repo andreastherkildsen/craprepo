@@ -1,6 +1,7 @@
 angular.module('postModule', [])
 
-.controller('postCtrl', function($scope){
+.controller('postCtrl', function(postService, $scope, $rootScope){
+
 	$scope.posts = postService.query();
 	$scope.newPost = {created_by: '', title: '', desc: '', tags: '', created_at: ''};
 
