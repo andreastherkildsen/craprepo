@@ -6,6 +6,7 @@
   'ui.router',
   'ngStorage',
   'ngResource',
+  'ngGeolocation',
   'imgModule',
   'memberzModule',
   'postModule',
@@ -27,37 +28,33 @@
  	 $urlRouterProvider.when('', '/');
  	 $urlRouterProvider.otherwise("/404");
 
-      $stateProvider
-       .state('home', {
-      url: '/',
-      templateUrl: 'views/main.html',
-      controller: 'MemberCtrl'
-    })
+  $stateProvider
+  .state('home', {
+    url: '/',
+    templateUrl: 'views/main.html',
+    controller: 'MemberCtrl'
+  })
 
-    	 .state('frontpage', {
-      url: '/frontpage',
-      templateUrl: 'views/frontpage.html',
-      controller: 'postCtrl'
-
-    })
-
-     .state('profile', {
-       url: '/profile',
-      templateUrl: 'views/profile.html',
-      controller: 'MemberCtrl'
-     })
-
-     .state('newpost', {
-      url: '/newpost',
-      templateUrl: 'views/newpost.html',
-      controller: 'postCtrl'
-     });
-
-
-
-       $locationProvider.html5Mode(true);
-
+  .state('frontpage', {
+    url: '/frontpage',
+    templateUrl: 'views/frontpage.html',
+    controller: 'postCtrl'
 
   })
+
+  .state('profile', {
+     url: '/profile',
+    templateUrl: 'views/profile.html',
+    controller: 'MemberCtrl'
+  })
+
+  .state('newpost', {
+    url: '/newpost',
+    templateUrl: 'views/newpost.html',
+    controller: 'postCtrl'
+  });
+
+  $locationProvider.html5Mode(true);
+})
 
 

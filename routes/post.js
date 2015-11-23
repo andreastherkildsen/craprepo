@@ -30,6 +30,9 @@ router.route('/posts')
 		post.desc = req.body.desc;
 		post.tags = req.body.tags;
 		post.created_by = req.body.created_by;
+		post.latitude = req.body.latitude;
+		post.longitude = req.body.longitude;
+
 		post.save(function(err, post) {
 			if (err){
 				return res.send(500, err);

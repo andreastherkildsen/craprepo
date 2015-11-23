@@ -6,7 +6,9 @@ var postSchema = new mongoose.Schema({
 	created_at: {type: Date, default: Date.now},
 	title: String,
 	desc: String,
-	tags: String
+	tags: String,
+	latitude: String,
+	longitude: String
 
 });
 
