@@ -17,7 +17,8 @@ angular.module('memberzModule', [])
       if(data.state == 'success'){
         $rootScope.authenticated = true;
         $rootScope.current_user = data.user.username;
-        $location.path('/');
+        $location.path('/profile');
+        console.log($scope.user);
       }
       else{
         $scope.error_message = data.message;
@@ -31,6 +32,7 @@ angular.module('memberzModule', [])
         $rootScope.authenticated = true;
         $rootScope.current_user = data.user.username;
         $location.path('/');
+        console.log($scope.user);
       }
       else{
         $scope.error_message = data.message;

@@ -26,9 +26,9 @@ router.route('/posts')
 	.post(function(req, res){
 
 		var post = new Post();
-		post.text = req.body.text;
-		post.desc = req.body.text;
-		post.tags = req.body.text;
+		post.title = req.body.title;
+		post.desc = req.body.desc;
+		post.tags = req.body.tags;
 		post.created_by = req.body.created_by;
 		post.save(function(err, post) {
 			if (err){
@@ -66,9 +66,9 @@ router.route('/posts/:id')
 				res.send(err);
 
 			post.created_by = req.body.created_by;
-			post.text = req.body.text;
-			post.desc = req.body.text;
-			post.tags = req.body.text;
+			post.title = req.body.title;
+			post.desc = req.body.desc;
+			post.tags = req.body.tags;
 
 			post.save(function(err, post){
 				if(err)

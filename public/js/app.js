@@ -17,6 +17,7 @@
       $http.get('auth/signout');
       $rootScope.authenticated = false;
       $rootScope.current_user = '';
+      $$location.path('/');
   };
 })
 
@@ -42,7 +43,7 @@
        .state('profile', {
         url: '/profile',
         templateUrl: 'views/profile.html',
-        controller: 'imgCtrl'
+        controller: 'MemberCtrl'
        });
 
        $locationProvider.html5Mode(true);

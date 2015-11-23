@@ -3,9 +3,10 @@ var express      = require('express');
 var bodyParser   = require('body-parser');
 var cookieParser = require('cookie-parser');
 var path         = require('path');
+var session      = require('express-session');
 var passport     = require('passport');
 var authenticate = require('./routes/authenticate')(passport);
-var post         = require('./routes/post');
+//var post         = require('./routes/post');
 var logger       = require('morgan');
 var fs           = require('fs-extra');
 var uuid         = require('node-uuid');
@@ -30,6 +31,7 @@ var Post = require('./models/post');
 
 require('./routes/users.js')(router, mongoose, User);
 require('./routes/post.js')(router, mongoose, Post);
+require('./routes/authenticate.js')(passport);
 //require('./routes/imageuser.js')(router, mongoose, imageUser);
 
 
@@ -47,6 +49,12 @@ app.use(function(req, res, next) {
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(logger('dev'));
+app.use(session({
+  secret: 'keyboard cat',
+  resave: 'true',
+  saveUninitialized: 'true'
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -55,13 +63,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/auth', authenticate);
+app.use('/posts', Post);
 
 
 //// Initialize Passport
 var initPassport = require('./passport-init');
 initPassport(passport);
-
-
 
 
 app.get('/', function(req, res){
