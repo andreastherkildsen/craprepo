@@ -3,14 +3,31 @@
 	<section id="content" class="frontMargin">
 	    <h2>See what other users are doing right now!</h2>	
 	</section>
-
-	<div class="col-md-3 post" ng-repeat="post in posts">
-		<h1>{{post.title}}</h1>
-		<p>{{post.tags}}</p>
-		<h3>{{post.desc}}</h3>
-		<p>{{post.created_by}}</p>
-		<p>{{post.created_at}}</p>
-		<p>Lat: {{post.latitude}}</p>
-		<p>Long: {{post.longitude}}</p>
-	</div>
+	<div class="row">    
+        <div class="col-md-3" ng-repeat="post in posts">
+            <!--<div class="post" style="background-image:url('data:{{photo.file.filetype}};base64,{{photo.file.base64}}')">-->
+            <div class="post">
+                <div class="description">                    
+                    <p class="itemDescription">{{post.title}}</p>
+                </div> 
+                <div class="banner">
+                    <div class="rating">
+                        <p><span class="fa fa-thumbs-o-up thumbs"> 39</span><span class="fa fa-comment-o"> 3</span></p>
+                    </div>
+                    <div class="map">
+                        <span class="fa fa-map-marker"></span>
+                    </div>
+                    <div class="date">
+                        {{post.created_at | date}}
+                    </div>
+                    <div class="location">
+                        <p><b>Location</b></p>
+                        <p>Latitude: {{post.latitude}}</p>
+                        <p>Longitude: {{post.longitude}}</p>
+                    </div>
+                </div>
+                </div>               
+            </div>
+        </div>
+    </div>
 </div>
