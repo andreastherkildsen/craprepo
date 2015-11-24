@@ -25,8 +25,7 @@ angular.module('postModule', [])
 		});
 	};
 
-	$scope.lol = function(){
-		console.log($scope.myPosition.coords.latitude);
+	$scope.getUser = function() {
+		console.log(user);
 	};
-
 });

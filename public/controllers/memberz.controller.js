@@ -6,7 +6,6 @@ angular.module('memberzModule', [])
 		password: '', 
 		firstName: '', 
 		lastName: '', 
-		phone: '', 
 		email: '' 
 
 	};
@@ -16,9 +15,9 @@ angular.module('memberzModule', [])
     $http.post('/auth/login', $scope.user).success(function(data){
       if(data.state == 'success'){
         $rootScope.authenticated = true;
-        $rootScope.current_user = data.user.username;
+        $rootScope.current_user = data;
         $location.path('/profile');
-        console.log($scope.user);
+        console.log(data);
       }
       else{
         $scope.error_message = data.message;
@@ -30,9 +29,9 @@ angular.module('memberzModule', [])
     $http.post('/auth/signup', $scope.user).success(function(data){
       if(data.state == 'success'){
         $rootScope.authenticated = true;
-        $rootScope.current_user = data.user.username;
+        $rootScope.current_user = data;
         $location.path('/');
-        console.log($scope.user);
+        console.log(data);
       }
       else{
         $scope.error_message = data.message;

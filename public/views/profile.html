@@ -1,15 +1,15 @@
 <header ng-include="'templates/headerlogin.html'"></header>
 <div class="container-fluid">
     <section id="profileBanner">
-            <h1 class="profileHeader text-center">{{current_user}}</h1>
+            <h1 class="profileHeader text-center">{{current_user.user.firstName}} {{current_user.user.lastName}}</h1>
             <div class="profileImage">
                 <img class="img-circle img-responsive" alt="Kim Johansen" src="Images/KimJohansen.jpg" />
             </div>
-            <h2 class="profileHeader text-center">Aalborg</h2>
+            <h2 class="profileHeader text-center">@{{current_user.user.username}}</h2>
     </section>
 </div>
 <div class="container">
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-12">
             <form name="form">
                 <h3>Upload billede</h3>
@@ -52,7 +52,7 @@
             
             <hr>     
         </div>
-    </div>
+    </div> -->
     <div class="row">    
         <div class="col-md-3 post" ng-repeat="photo in photos">
             <div class="post" style="background-image:url('data:{{photo.file.filetype}};base64,{{photo.file.base64}}')">

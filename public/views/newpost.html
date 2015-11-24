@@ -5,13 +5,10 @@
 	</section>
 
 	<form ng-Submit="post()">
-	    <h3>{{current_user}}, share stuff 2day!</h3>		
+	    <h3>{{current_user.user.username}}, share stuff 2day!</h3>		
 		<input type="text" ng-model="newPost.title" placeholder="Title">
 		<input type="text" ng-model="newPost.desc" placeholder="Description">
 		<input type="text" ng-model="newPost.tags" placeholder="#Tags">
 		<input class="btn submit-btn pull-right" type="submit" value="#share" />                
     </form>
-
-    <button ng-click="lol()">Push me for coords!</button>
-
 </div>
