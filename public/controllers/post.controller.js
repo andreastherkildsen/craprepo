@@ -14,7 +14,7 @@ angular.module('postModule', [])
 	$scope.newPost = {created_by: '', title: '', desc: '', tags: '', created_at: '', latitude: '', longitude: ''};
 
 	$scope.post = function() {
-		$scope.newPost.created_by = $rootScope.current_user;
+		$scope.newPost.created_by = $rootScope.current_user.user.username;
 		$scope.newPost.created_at = Date.now();
 		$scope.newPost.latitude = $scope.myPosition.coords.latitude;
 		$scope.newPost.longitude = $scope.myPosition.coords.longitude;
@@ -26,6 +26,6 @@ angular.module('postModule', [])
 	};
 
 	$scope.getUser = function() {
-		console.log(user);
+		console.log($rootScope.current_user);
 	};
 });
