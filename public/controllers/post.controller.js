@@ -11,7 +11,14 @@ angular.module('postModule', [])
   	});
 
 	$scope.posts = postService.query();
-	$scope.newPost = {created_by: '', title: '', desc: '', tags: '', created_at: '', latitude: '', longitude: ''};
+	$scope.newPost = {
+		created_by: '', 
+		title: '', 
+		desc: '', 
+		tags: '', 
+		created_at: '', 
+		latitude: '', 
+		longitude: ''};
 
 	$scope.post = function() {
 		$scope.newPost.created_by = $rootScope.current_user.user.username;
@@ -25,7 +32,4 @@ angular.module('postModule', [])
 		});
 	};
 
-	$scope.getUser = function() {
-		console.log($rootScope.current_user);
-	};
 });

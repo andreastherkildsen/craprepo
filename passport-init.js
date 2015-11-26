@@ -67,11 +67,11 @@ module.exports = function(passport){
 					var newUser = new User();
 
 					// set the user's local credentials
-					newUser.username = username;
-					newUser.password = createHash(password);
+					newUser.username  = username;
+					newUser.password  = createHash(password);
 					newUser.firstName = req.body.firstName;
-					newUser.lastName = req.body.lastName;
-					newUser.email = req.body.email;
+					newUser.lastName  = req.body.lastName;
+					newUser.email     = req.body.email;
 
 					// save the user
 					newUser.save(function(err) {

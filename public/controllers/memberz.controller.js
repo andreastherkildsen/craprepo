@@ -30,7 +30,7 @@ angular.module('memberzModule', [])
       if(data.state == 'success'){
         $rootScope.authenticated = true;
         $rootScope.current_user = data;
-        $location.path('/');
+        $location.path('/profile');
         console.log(data);
       }
       else{

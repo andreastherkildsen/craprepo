@@ -5,12 +5,10 @@ var cookieParser = require('cookie-parser');
 var path         = require('path');
 var session      = require('express-session');
 var passport     = require('passport');
-var authenticate = require('./routes/authenticate')(passport);
-//var post         = require('./routes/post');
 var logger       = require('morgan');
-var fs           = require('fs-extra');
-var uuid         = require('node-uuid');
-var multiparty   = require('multiparty');
+//var fs           = require('fs-extra');
+//var uuid         = require('node-uuid');
+//var multiparty   = require('multiparty');
 var mongoose     = require('mongoose');
 var mongodb      = require('mongodb');
 var app          = express();
@@ -21,14 +19,13 @@ var port         = 1337;
 mongoose.connect('mongodb://localhost/');
 
 //MODELS
-
-var router = express.Router();
 var User = require('./models/users');
 var Post = require('./models/post');
 //var imageUser = require('./models/imagesuser');
 
 //ROUTES 
-
+var router = express.Router();
+var authenticate = require('./routes/authenticate')(passport);
 require('./routes/users.js')(router, mongoose, User);
 require('./routes/post.js')(router, mongoose, Post);
 require('./routes/authenticate.js')(passport);
@@ -104,6 +101,6 @@ router.use(function(res, req, next) {
 
 //Consol besked ved start af server
 app.listen(port);
-console.log('We are live on port' + port);
+console.log('We are live on port ' + port);
 
 module.exports = app; 
