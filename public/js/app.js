@@ -52,6 +52,12 @@
     url: '/newpost',
     templateUrl: 'views/newpost.html',
     controller: 'postCtrl'
+  })
+
+  .state('frontfagedetail', {
+    url: '/frontpage/:frontpageId',
+    templateUrl: 'views/newpost-single.html',
+    controller: 'PostCtrl'
   });
 
   $locationProvider.html5Mode(true);
