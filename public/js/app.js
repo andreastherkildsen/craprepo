@@ -10,7 +10,8 @@
   'imgModule',
   'memberzModule',
   'postModule',
-  'postServiceModule'
+  'postServiceModule',
+  'postIdModule'
 
 ]).run(function($rootScope) {
   $rootScope.authenticated = false;
@@ -57,7 +58,8 @@
 
   .state('frontfagedetail', {
     url: '/frontpage/:frontpageId',
-    templateUrl: 'views/newpost-single.html'
+    templateUrl: 'views/newpost-single.html',
+    controller: 'postIdCtrl'
   });
 
   $locationProvider.html5Mode(true);
