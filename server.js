@@ -6,9 +6,9 @@ var path         = require('path');
 var session      = require('express-session');
 var passport     = require('passport');
 var logger       = require('morgan');
-//var fs           = require('fs-extra');
-//var uuid         = require('node-uuid');
-//var multiparty   = require('multiparty');
+//var fs         = require('fs-extra');
+//var uuid       = require('node-uuid');
+//var multiparty = require('multiparty');
 var mongoose     = require('mongoose');
 var mongodb      = require('mongodb');
 var app          = express();
@@ -61,6 +61,9 @@ app.use(passport.session());
 
 app.use('/auth', authenticate);
 app.use('/posts', Post);
+app.use('/api', router);
+
+
 
 
 //// Initialize Passport
@@ -88,9 +91,6 @@ router.get('/', function(req, res) {
 
 	});
 
-
-app.use('/api', router);
-app.use('/auth', authenticate);
 
 //Besked til console når der oprettes/slettes i DB
 router.use(function(res, req, next) {
