@@ -11,6 +11,7 @@
   'memberzModule',
   'postModule',
   'postServiceModule'
+
 ]).run(function($rootScope) {
   $rootScope.authenticated = false;
   $rootScope.current_user = '';
@@ -56,8 +57,7 @@
 
   .state('frontfagedetail', {
     url: '/frontpage/:frontpageId',
-    templateUrl: 'views/newpost-single.html',
-    controller: 'postCtrl'
+    templateUrl: 'views/newpost-single.html'
   });
 
   $locationProvider.html5Mode(true);
