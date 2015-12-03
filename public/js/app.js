@@ -11,7 +11,9 @@
   'memberzModule',
   'postModule',
   'postServiceModule',
-  'postIdModule'
+  'postIdModule',
+  'fileModelD',
+  'fileModelS'
 
 ]).run(function($rootScope) {
   $rootScope.authenticated = false;

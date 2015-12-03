@@ -6,11 +6,15 @@ var path         = require('path');
 var session      = require('express-session');
 var passport     = require('passport');
 var logger       = require('morgan');
-//var fs         = require('fs-extra');
-//var uuid       = require('node-uuid');
-//var multiparty = require('multiparty');
+var fs           = require('fs-extra');
+
+//Image Upload
+var multer       = require('multer');
+
+//MongoDB
 var mongoose     = require('mongoose');
 var mongodb      = require('mongodb');
+//App
 var app          = express();
 var port         = 1337;
 
@@ -56,6 +60,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(multer({dest: './uploads/'}));
 app.use(passport.initialize());
 app.use(passport.session());
 
