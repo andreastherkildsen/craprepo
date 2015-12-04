@@ -14,6 +14,7 @@ angular.module('postModule', [])
 	$scope.newPost = {};
 
 	$scope.post = function() {
+		var file = $scope.newPost.file;
 		var uploadUrl = '/posts';		
 		$scope.newPost.created_by = $rootScope.current_user.user.username;
 		$scope.newPost.created_at = Date.now();
@@ -26,6 +27,5 @@ angular.module('postModule', [])
 			$scope.newPost = {created_by: '', title: '', desc: '', tags: '', created_at: '', latitude: '', longitude: ''};
 		});
 
-		console.log($scope.newPost);
 	};
 });

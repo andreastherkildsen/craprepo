@@ -2,8 +2,8 @@ angular.module('fileModelD', [])
 
 .directive('fileModelDirective', ['$parse', function($parse){
 
-	return{
-		restrict: 'A', //A for attribute
+	return {
+		restrict: 'A',
 		link: function(scope, element, attrs){
 			var model = $parse(attrs.fileModel);
 			var modelSetter = model.assign;
@@ -15,4 +15,4 @@ angular.module('fileModelD', [])
 			})
 		}
 	}
-}]);
+}])

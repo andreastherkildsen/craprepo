@@ -58,10 +58,10 @@
     controller: 'postCtrl'
   })
 
-  .state('frontfagedetail', {
-    url: '/frontpage/:frontpageId',
-    templateUrl: 'views/newpost-single.html',
-    controller: 'postIdCtrl'
+  .state('postdetail', {
+    url: '/frontpage/:id',
+    templateUrl: 'views/postDetails.html',
+    controller: 'postDetailsCtrl'
   });
 
   $locationProvider.html5Mode(true);

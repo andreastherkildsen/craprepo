@@ -10,4 +10,4 @@ angular.module('fileModelS', [])
 			headers: { 'Content-Type': undefined }
 		});
 	}
-}]);
+}])

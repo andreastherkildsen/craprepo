@@ -4,7 +4,8 @@
 	    <h2>Hello! See the unique post!</h2>	
 	</section>
 
-    <div class="row">    
+    <div class="row">   
+    <a class="btn btn-primary btn-block" href="/frontpage">Go back</a> 
         <div class="col-md-12">
             <!--<div class="post" style="background-image:url('data:{{photo.file.filetype}};base64,{{photo.file.base64}}')">-->
             <div class="post">
@@ -28,10 +29,19 @@
                         <p>Latitude: {{post.latitude}}</p>
                         <p>Longitude: {{post.longitude}}</p>
                     </div>
-                     <a class="btn btn-primary btn-block" href="/frontpage">Go back</a>
                 </div>
-                </div>               
-            </div>
+            </div>               
         </div>
-  
+    </div>
+    <div class="row">
+    <ul ng-repeat="comment in comments">
+        <li>{{comment.comment}}</li>
+    </ul>
+    </div>
+    <div class="row">
+        <form ng-submit="PostComment()">
+            <input type="text" ng-model="newComment.comment" placeholder="Write a comment">
+            <input type="submit" class="btn" value="Submit">
+        </form>
+    </div>  
 </div>
