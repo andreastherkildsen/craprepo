@@ -7,9 +7,9 @@ var session      = require('express-session');
 var passport     = require('passport');
 var logger       = require('morgan');
 var fs           = require('fs-extra');
-
-//Image Upload
-var multer       = require('multer');
+var formidable 	 = require('formidable');
+var qt   		 = require('quickthumb');
+var util 		 = require('util');
 
 //MongoDB
 var mongoose     = require('mongoose');
@@ -25,15 +25,12 @@ mongoose.connect('mongodb://localhost/');
 //MODELS
 var User = require('./models/users');
 var Post = require('./models/post');
-var Comment = require('./models/comment');
-//var imageUser = require('./models/imagesuser');
 
 //ROUTES 
 var router = express.Router();
 var authenticate = require('./routes/authenticate')(passport);
 require('./routes/users.js')(router, mongoose, User);
 require('./routes/post.js')(router, mongoose, Post);
-require('./routes/comment.js')(router, mongoose, Comment);
 require('./routes/authenticate.js')(passport);
 //require('./routes/imageuser.js')(router, mongoose, imageUser);
 
@@ -57,7 +54,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(multer({dest: '../uploads/'}));
+app.use(qt.static(__dirname + '/'));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -90,8 +87,7 @@ router.use(function(req, res, next) {
 
 router.get('/', function(req, res) {
 	res.json({ message: 'Apiet virker, der er hul igennem du'});
-
-	});
+});
 
 
 //Besked til console når der oprettes/slettes i DB

@@ -11,7 +11,7 @@ angular.module('postIdModule', [])
 		$scope.newComment.created_by = $rootScope.current_user.user.username;
 		$scope.newComment.created_at = Date.now();
 
-		postService.save($scope.newComment, function(){
+		postService.update($scope.newComment, function(){
 			$scope.post.comments = postService.query();
 			$scope.newComment = {created_by: '', comment: ''};
 		});

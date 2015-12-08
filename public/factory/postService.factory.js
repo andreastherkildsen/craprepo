@@ -1,9 +1,7 @@
 angular.module('postServiceModule', [])
 
 .factory('postService', function($resource){
-	return $resource('/api/posts/:id');
+	return $resource('/api/posts/:id', null, {
+		'update': {method:'PUT'}
+	});
 })
-
-.factory('commentService', function($resource){
-	return $resource('/api/comments/:id');
-});
