@@ -1,9 +1,11 @@
 angular.module('postIdModule', [])
 
-.controller('postDetailsCtrl', function(postService, $resource, $http, $scope, $rootScope, $geolocation, $stateParams){
+.controller('postDetailsCtrl', function(postService, commentService, $resource, $http, $scope, $rootScope, $geolocation, $stateParams){
 	$http.get('/api/posts/'+$stateParams.id).success(function(data){
 		$scope.post = data;
-	});
+		$scope.comments = data;
+	})
+
 
 	$scope.post = postService.query();
 	$scope.newComment = {};
@@ -12,10 +14,10 @@ angular.module('postIdModule', [])
 		$scope.newComment.created_at = Date.now();
 
 		postService.save($scope.newComment, function(){
-			$scope.post.comments = postService.query();
+			$scope.comments = commentService.query();
 			$scope.newComment = {created_by: '', comment: ''};
 		});
 
-		console.log($scope.post.comments);
+		console.log($scope.comments);
 	};
 })
