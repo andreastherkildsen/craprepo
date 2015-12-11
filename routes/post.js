@@ -1,3 +1,8 @@
+var fs           = require('fs-extra');
+var formidable 	 = require('formidable');
+var qt   		 = require('quickthumb');
+var util 		 = require('util');
+
 module.exports = function(router, mongoose, Post){
 
 //Used for routes that must be authenticated.
@@ -23,23 +28,45 @@ router.use('/posts', isAuthenticated);
 
 router.route('/posts')
 	//Laver et nyt post!
-	.post(function(req, res){
+	.post(function(req, res){	
 
-		var post = new Post();
-		post.title = req.body.title;
-		post.desc = req.body.desc;
-		post.tags = req.body.tags;
-		post.created_by = req.body.created_by;
-		post.latitude = req.body.latitude;
-		post.longitude = req.body.longitude;
+		var form = new formidable.IncomingForm();
+  		form.parse(req, function(err, fields, files) {
+	    	var post = new Post();
+			post.title = req.body.title;
+			post.desc = req.body.desc;
+			post.tags = req.body.tags;
+			post.created_by = req.body.created_by;
+			post.latitude = req.body.latitude;
+			post.longitude = req.body.longitude;
 
-		post.save(function(err, post) {
-			if (err){
-				return res.send(500, err);
-			}
-			return res.json(post);
-		});
+			post.save(function(err, post) {
+				if (err){
+					console.log(err);
+					//return res.send(500, err);
+				}
+				return res.json(post);
+			});
+  		});
+
+  		form.on('end', function(fields, files) {
+		    /* Temporary location of our uploaded file */
+		    var temp_path = this.openedFiles[0].path;
+		    /* The file name of the uploaded file */
+		    var file_name = this.openedFiles[0].name;
+		    /* Location where we want to copy the uploaded file */
+		    var new_location = './uploads/';
+
+		    fs.copy(temp_path, new_location + file_name, function(err) {  
+				if (err) {
+					console.error(err);
+				} else {
+					console.log("success!")
+				}
+	    	});
+  		});
 	})
+
 	//henter alle posts
 	.get(function(req, res){
 		console.log('Get call');
@@ -78,7 +105,6 @@ router.route('/posts/:id')
 			post.save(function(err, post){
 				if(err)
 					res.send(err);
-
 				res.json(post);
 			});
 		});

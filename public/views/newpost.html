@@ -4,13 +4,14 @@
 	    <h2>Make a post, to be awesome!</h2>	
 	</section>
 
-	<form ng-Submit="post()">
+	<form action="api/posts" enctype="multipart/form-data" method="post" 
+	<!-- ng-Submit="post()" -->
+	>
 	    <h3>{{current_user.user.username}}, share stuff 2day!</h3>		
 		<input type="text" ng-model="newPost.title" placeholder="Title">
 		<input type="text" ng-model="newPost.desc" placeholder="Description">
 		<input type="text" ng-model="newPost.tags" placeholder="#Tags">
-		 <input type="file" file-model="newPost.file">
-		<input class="btn submit-btn pull-right" type="submit" value="#share" />                
+		<input class="btn submit-btn pull-right" type="submit" value="#share" /> 
+		<input multiple="multiple" name="upload" type="file" />               
     </form>	
-
 </div>

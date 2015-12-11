@@ -7,9 +7,9 @@ var session      = require('express-session');
 var passport     = require('passport');
 var logger       = require('morgan');
 var fs           = require('fs-extra');
-
-//Image Upload
-var multer       = require('multer');
+var formidable 	 = require('formidable');
+var qt   		 = require('quickthumb');
+var util 		 = require('util');
 
 //MongoDB
 var mongoose     = require('mongoose');
@@ -85,8 +85,7 @@ router.use(function(req, res, next) {
 
 router.get('/', function(req, res) {
 	res.json({ message: 'Apiet virker, der er hul igennem du'});
-
-	});
+});
 
 
 //Besked til console når der oprettes/slettes i DB

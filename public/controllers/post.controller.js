@@ -14,8 +14,7 @@ angular.module('postModule', [])
 	$scope.newPost = {};
 
 	$scope.post = function() {
-		var file = $scope.newPost.file;
-		var uploadUrl = '/posts';		
+		
 		$scope.newPost.created_by = $rootScope.current_user.user.username;
 		$scope.newPost.created_at = Date.now();
 		$scope.newPost.latitude = $scope.myPosition.coords.latitude;
