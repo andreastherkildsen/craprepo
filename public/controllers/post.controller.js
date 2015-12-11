@@ -1,6 +1,6 @@
 angular.module('postModule', [])
 
-.controller('postCtrl', function(postService, $scope, multipartForm, $rootScope, $geolocation){
+.controller('postCtrl', function(postService, $scope, $rootScope, $geolocation, $location){
 
 	// Get position
   	$geolocation.getCurrentPosition({
@@ -20,12 +20,11 @@ angular.module('postModule', [])
 		$scope.newPost.created_at = Date.now();
 		$scope.newPost.latitude = $scope.myPosition.coords.latitude;
 		$scope.newPost.longitude = $scope.myPosition.coords.longitude;
-		multipartForm.post(uploadUrl, $scope.newPost);
 		
 		postService.save($scope.newPost, function(){
 			$scope.posts = postService.query();
 			$scope.newPost = {created_by: '', title: '', desc: '', tags: '', created_at: '', latitude: '', longitude: ''};
+			$location.path('/frontpage');
 		});
-
 	};
 });

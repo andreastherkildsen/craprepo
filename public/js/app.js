@@ -7,13 +7,11 @@
   'ngStorage',
   'ngResource',
   'ngGeolocation',
-  'imgModule',
+  //'imgModule',
   'memberzModule',
   'postModule',
   'postServiceModule',
-  'postIdModule',
-  'fileModelD',
-  'fileModelS'
+  'postIdModule'
 
 ]).run(function($rootScope) {
   $rootScope.authenticated = false;
@@ -63,8 +61,6 @@
     templateUrl: 'views/postDetails.html',
     controller: 'postDetailsCtrl'
   });
-
-  $locationProvider.html5Mode(true);
 })
 
 

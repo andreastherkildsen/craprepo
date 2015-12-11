@@ -42,9 +42,9 @@ router.route('/posts')
 	})
 	//henter alle posts
 	.get(function(req, res){
-		console.log('debug1');
+		console.log('Get call');
 		Post.find(function(err, posts){
-			console.log('debug2');
+			console.log('Post call');
 			if(err){
 				return res.send(500, err);
 			}
@@ -69,9 +69,11 @@ router.route('/posts/:id')
 				res.send(err);
 
 			post.created_by = req.body.created_by;
+			post.created_at = req.body.created_at;
 			post.title = req.body.title;
 			post.desc = req.body.desc;
 			post.tags = req.body.tags;
+			post.comments = req.body.comments;
 
 			post.save(function(err, post){
 				if(err)
@@ -91,5 +93,4 @@ router.route('/posts/:id')
 			res.json("deleted :(");
 		});
 	});
-
 }

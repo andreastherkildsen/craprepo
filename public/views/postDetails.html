@@ -5,7 +5,7 @@
 	</section>
 
     <div class="row">   
-    <a class="btn btn-primary btn-block" href="/frontpage">Go back</a> 
+    <a href="#/frontpage">Go back</a> 
         <div class="col-md-12">
             <!--<div class="post" style="background-image:url('data:{{photo.file.filetype}};base64,{{photo.file.base64}}')">-->
             <div class="post">
@@ -32,12 +32,14 @@
                 </div>
             </div>               
         </div>
-    </div>
+    </div>   
     <div class="row">
-    <ul ng-repeat="comment in comments">
-        <li><p>{{comment.comment}} - <b>@{{comment.created_by}}</p></b></li>
-    </ul>
-    </div>
+        <ul>
+            <li ng-repeat="comment in post.comments">
+                <p>{{comment.comment}} - @{{comment.created_by}} {{comment.created_at | date}}</p>
+            </li>
+        </ul>
+    </div>   
     <div class="row">
         <form ng-submit="PostComment()">
             <input type="text" ng-model="newComment.comment" placeholder="Write a comment">
