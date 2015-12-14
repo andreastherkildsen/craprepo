@@ -29,6 +29,7 @@ angular.module('imgModule', ['ngStorage', 'naif.base64', 'ngGeolocation'])
       latitude: $scope.myPosition.coords.latitude,
       longitude: $scope.myPosition.coords.longitude
     };
+    
     console.log(newImage);
     $localStorage.photos.push(newImage);
     $scope.file = '';

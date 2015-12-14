@@ -4,35 +4,37 @@ angular.module('postIdModule', [])
 	
 	$http.get('/api/posts/'+$stateParams.id).success(function(data){
 		$scope.post = data;
-	});
+		console.log($scope.post);
 
-	$scope.posts = postService.query();
-		$scope.PostComment = function(){
-			var post = {};
-			post.id = $scope.post._id;
-			post.title = $scope.post.title;
-			post.desc = $scope.post.desc;
-			post.tags = $scope.post.tags;
-			post.latitude = $scope.post.latitude;
-			post.longitude = $scope.post.longitude;
-			post.created_by = $scope.post.created_by;
-			post.created_at = $scope.post.created_at;
-			
-			if(post.comments == null) {		
-				post.comments = [];	
-			}
-			
-			post.comments.push({
+		// var imagename = $scope.post.imageName;
+		// var localimage = $localstorage.photos.file.filename;
+		// if (imagename == localimage){
+		// 	$scope.image = $localstorage.photos.file.filename)
+		// }
+
+	});	
+
+
+	$scope.PostComment = function(){
+		var post = $scope.post;
+		
+		if(post.comments == null) {		
+			post.comments = [];	
+		}
+		
+		post.comments.push({
+
 				comment : $scope.newComment.comment,
 				created_by : $rootScope.current_user.user.username,
 				created_at : Date.now()
-			});
-			
-			console.log(post);
+				
+		});		
 
-			$http.put('/api/posts/'+$stateParams.id, post).success(function(data, status){
-				console.log(status);
-				$scope.post = postService.query();
-			});
-		};
+		$http.put('/api/posts/'+$stateParams.id, post).success(function(data, status){
+		 	console.log(status);
+			$scope.post = data;
+
+	 		console.log($scope.post);
+	 	);
+	};	
 })

@@ -13,6 +13,7 @@ var commentSchema = new mongoose.Schema({
 var postSchema = new mongoose.Schema({
 	created_by: String,
 	created_at: {type: Date, default: Date.now},
+	//imageName: String,
 	title: String,
 	desc: String,
 	tags: String,
