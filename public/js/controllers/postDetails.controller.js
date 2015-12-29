@@ -4,14 +4,6 @@ angular.module('postIdModule', [])
 	
 	$http.get('/api/posts/'+$stateParams.id).success(function(data){
 		$scope.post = data;
-		console.log($scope.post);
-
-		// var imagename = $scope.post.imageName;
-		// var localimage = $localstorage.photos.file.filename;
-		// if (imagename == localimage){
-		// 	$scope.image = $localstorage.photos.file.filename)
-		// }
-
 	});	
 
 
@@ -23,7 +15,6 @@ angular.module('postIdModule', [])
 		}
 		
 		post.comments.push({
-
 				comment : $scope.newComment.comment,
 				created_by : $rootScope.current_user.user.username,
 				created_at : Date.now()
@@ -35,6 +26,8 @@ angular.module('postIdModule', [])
 			$scope.post = data;
 
 	 		console.log($scope.post);
-	 	);
+	 	});
+
+	 	$scope.counted = $scope.post.comments.length;
 	};	
 })

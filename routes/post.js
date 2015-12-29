@@ -37,6 +37,7 @@ router.route('/posts')
 		post.latitude = req.body.latitude;
 		post.longitude = req.body.longitude;
 		post.imageName = req.body.imageName;
+		post.image = req.body.image;
 
 		post.save(function(err, post) {
 			if (err){

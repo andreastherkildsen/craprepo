@@ -215,7 +215,7 @@ input[type="text"], input[type="password"], input[type="email"], input[type="num
     border-bottom: solid 2px #c9c9c9; }
 
 input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="number"]:focus {
-  border-bottom: solid 2px #969696; }
+  border-bottom: solid 2px #969696; }t
 
 .textBoxLogin {
   width: 90% !important;
@@ -237,7 +237,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 #content {
   position: relative;
   overflow: hidden;
-  padding: 90px 0;
+  padding: 10px 0;
   background-color: #fff;
   color: inherit;
   width: 100%;
@@ -280,7 +280,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 
 .description {
   z-index: 1;
-  padding: 30px 100px 30px 25px;
+  padding: 0px;
   height: 100%;
   width: 100%;
   top: 0;
@@ -288,13 +288,13 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
   transition: all 0.2s ease-in-out 0.1s; }
 
 .itemDescription {
-  color: #fff;
+  color: #000;
   font-size: 2.2rem;
   line-height: 3rem;
-  margin-top: 10px;
+  margin-top: 0px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  margin-bottom: 52px; }
+  margin-bottom: 0px; }
 
 .top {
   background-color: #eee;
@@ -316,7 +316,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
   height: 250px;
   background-size: cover;
   background-position: center;
-  background-image: url("/images/bg.jpg");
+  background-repeat: none;
   position: relative;
   border-radius: 5px;
   margin-bottom: 30px; }
@@ -325,7 +325,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
   .post .banner {
     width: 100%;
     position: absolute;
-    padding: 15px;
+    padding: 15px 15px 10px 15px;
     left: 0;
     bottom: 0;
     background-color: #eee;
@@ -337,8 +337,9 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
       .post .banner .rating .fa {
         cursor: pointer; }
     .post .banner .map {
-      display: inline-block;
-      float: right; }
+      position: absolute;
+    right: 15px;
+    top: 21px; }
       .post .banner .map span {
         margin-top: 5px;
         color: #c0392b; }
@@ -348,6 +349,18 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
       display: none; }
     .post .banner .show {
       display: block; }
+
+    .post-details .itemDescription{
+      color:#000;
+      margin-bottom:10px;
+    }
+    .post-details .description{
+      padding:5px 0px 5px 0px;
+    }
+    .post-details p.tags, .post-details p.date {
+      font-size:12px;
+    }
+
 
 /**********    FOOTER     **********/
 #footer {

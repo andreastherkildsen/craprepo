@@ -7,11 +7,11 @@
   'ngStorage',
   'ngResource',
   'ngGeolocation',
-  //'imgModule',
   'memberzModule',
   'postModule',
   'postServiceModule',
-  'postIdModule'
+  'postIdModule',
+  'ngMap'
 
 ]).run(function($rootScope) {
   $rootScope.authenticated = false;

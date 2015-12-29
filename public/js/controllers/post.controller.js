@@ -1,13 +1,7 @@
-angular.module('postModule', ['ngStorage', 'naif.base64'])
+angular.module('postModule', ['naif.base64'])
 
-.controller('postCtrl', function(postService, $scope, $rootScope, $geolocation, $location, $window, $localStorage, $http){
-  
-
-  if($localStorage.photos == null) {
-    $localStorage.photos = [];
-  }
-
-	// Get position
+.controller('postCtrl', function(postService, $scope, $rootScope, $geolocation, $location, $window, $http){
+ 	// Get position
   	$geolocation.getCurrentPosition({
     	timeout: 60000
   	}).then(function(position) {
@@ -20,12 +14,11 @@ angular.module('postModule', ['ngStorage', 'naif.base64'])
 	$scope.post = function() {
 		var file = $scope.file;
 		$scope.newPost.imageName = $scope.file.filename;
+		$scope.newPost.image = $scope.file.base64;
 		$scope.newPost.created_by = $rootScope.current_user.user.username;
 		$scope.newPost.created_at = Date.now();
 		$scope.newPost.latitude = $scope.myPosition.coords.latitude;
 		$scope.newPost.longitude = $scope.myPosition.coords.longitude;
-		
-		$localStorage.photos.push(file);
 		
 		postService.save($scope.newPost, function(){		
 			$scope.posts = postService.query();
