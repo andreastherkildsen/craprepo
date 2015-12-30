@@ -9,9 +9,9 @@ MONGODB
 1. Naviger med CMD/Terminal/PowerShell indtil /MongoDB/Server/3.0/bin
 2. Kør følgende kommando - "Mongod"
 
-START EXPRESS
-1. CD til roden
-2. node server.js (Express)
+START SERVEREN
+1. CD til roden i projektet. 
+2. nodemon server.js
 3. Åben browser -> Localhost:1337
 5. See magic and hax! 
 

@@ -97,7 +97,7 @@ router.route('/posts/:id')
 		}, function(err) {
 			if (err)
 				res.send(err);
-			res.json("deleted :(");
+			res.json("deleted");
 		});
 	});
 }

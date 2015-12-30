@@ -6,14 +6,11 @@ var path         = require('path');
 var session      = require('express-session');
 var passport     = require('passport');
 var logger       = require('morgan');
-var fs           = require('fs-extra');
-var formidable 	 = require('formidable');
-var qt   		 = require('quickthumb');
-var util 		 = require('util');
 
 //MongoDB
 var mongoose     = require('mongoose');
 var mongodb      = require('mongodb');
+
 //App
 var app          = express();
 var port         = 1337;
@@ -22,7 +19,7 @@ var port         = 1337;
 //Connect til mongooseDB
 mongoose.connect('mongodb://localhost/');
 
-//MODELS
+//MODELS - Schemas. 
 var User = require('./models/users');
 var Post = require('./models/post');
 
@@ -32,14 +29,6 @@ var authenticate = require('./routes/authenticate')(passport);
 require('./routes/users.js')(router, mongoose, User);
 require('./routes/post.js')(router, mongoose, Post);
 require('./routes/authenticate.js')(passport);
-
-
-app.use(function(req, res, next) {
-	res.header("Acess-Control-Allow-Origin", "*");
-	res.header("Acess-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization, ID");
-	res.header("Acess-Control-Allow-Methods", "DELETE, PUT");
-	next();
-});
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -62,7 +51,6 @@ app.use('/api', router);
 
 
 
-
 //// Initialize Passport
 var initPassport = require('./passport-init');
 initPassport(passport);
@@ -70,14 +58,6 @@ initPassport(passport);
 
 app.get('/', function(req, res){
 	res.sendFile('../index.html');
-});
-
-
-// middleware to use for all requests
-router.use(function(req, res, next) {
-	// do logging
-	console.log('Something is happening.');
-	next();
 });
 
 

@@ -4,7 +4,6 @@
 
  angular.module('angular', [
   'ui.router',
-  'ngStorage',
   'ngResource',
   'ngGeolocation',
   'memberzModule',
