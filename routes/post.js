@@ -1,8 +1,3 @@
-var fs           = require('fs-extra');
-var formidable 	 = require('formidable');
-var qt   		 = require('quickthumb');
-var util 		 = require('util');
-
 module.exports = function(router, mongoose, Post){
 
 //Used for routes that must be authenticated.
