@@ -1,22 +1,123 @@
-# craprepo
-MEAN STACK - UCN IDE. 
-Lærer: Malthe og Ronni.
-Gruppe: Andreas, Dann, Jonas & Mikkel. 
+Angular:
+	- Et framework for dynamiske apps.
+	- Lader en burge HTML som templating sprog og udvider HTMLs syntax.
 
-For at kører det her gøgler-kode
+Module:
+	- Er en container for forskellige dele af applikationen.
 
-MONGODB
-1. Naviger med CMD/Terminal/PowerShell indtil /MongoDB/Server/3.0/bin
-2. Kør følgende kommando - "Mongod"
 
-START SERVEREN
-1. CD til roden i projektet. 
-2. nodemon server.js
-3. Åben browser -> Localhost:1337
-5. See magic and hax! 
+Controller:
+	- Javascript constructor.
+	- Tilføjer adfærd til $scope objektet.
+	- Kontrollere data.
 
-FOR AT UPLOADE ÆNDRINGER: 
-1. git status
-2. git add . 
-3. git commit -m "indtast din besked i "" " 
-4. git push
+
+Scope:
+	- Scope er et object der refererer til applikationenes model.
+	- De indeholder modellens data, som skal vidergives til viewet.
+	- Linker Controller og View sammen.
+
+
+RootScope:
+	- Alle applikationer har en enkelt rootScope.
+	- Alle andre scopes er efterkommere af rootScopet.
+
+
+Directive:
+	- Markører på DOM elementer (kan være attributer, element navne, kommentarer eller CSS klasser), der fortæller Angulars HTML compiler, at elementet skal gøre noget bestemt (ved hjælp af eventlisteners).
+	- Indbygget directives: ngBind, ngModel, ngClass, ng-repeat osv.
+
+
+Data-binding:
+	- Automatisk synkronisering af data imellem modellen og viewets komponenter.
+	- Viewet er en konstant projektering af modellen.
+	- Når modellen ændre sig, afspejles det i viewet og vice versa.
+
+
+Service:
+	- Returnerer funktionen.
+
+
+Factory:
+	- returnerer en funktions returnerings værdi.
+
+
+Dependency Injection:
+	- Et software design mønster, der beskæftiger sig med, hvordan komponenter får fat i deres dependencies.
+	- Angular injector subsytem, er ansvarlig for at oprette komponenter, løse deres dependencies og give dem til andre komponenter.
+
+
+
+--------------------------------------------------------------------------
+Backend
+----------
+
+Node.js:
+	- Server-side Javascript environment.
+	- Cross-platform.
+
+Express.js:
+	- Et framework til Node.js som gør det nemmere at lave det som man kan lave med Node.js i en pændere indpakning.
+
+	- Middleware : logik der fortæller express hvordan den skal håndtere et request når det er lavet hos klienten og inden den havner ved routerne.
+
+
+HTTP:
+	- Post
+		- Create
+	- Get
+		- Retrieve
+	- Delete
+		- Delete
+	- Put
+		- Update resource completely
+	- Patch
+		- Update partial resources
+
+
+--------------------------------------------------------------------------
+Data
+----------
+
+MongoDB:
+	- Open source database.
+	- Document orienteret data.
+
+
+NoSql:
+	- Tabeller/collections er ikke relationel.
+	- Skalerbar, hurtig og er god til at behandle store mængder data der ændres ofte.
+	- Json data.
+
+	- Kan dog blive meget uoverskueligt.
+
+Sql:
+	- Relationel.
+	- Umuligt t tilføje data der ikke er defineret i tabellerne.
+
+
+
+Models:
+	- For at sikre en "data consistency".
+
+
+
+--------------------------------------------------------------------------
+Diverse
+----------
+
+NPM:
+	- Node Package Manager.
+	- Nemt for udviklere at dele og genbruge kode.
+
+
+Bower:
+	- En package manager.
+	- Front-end stuff.
+
+
+Gulp:
+	- Et build tool.
+	- Man bygger selv et buildtool der f.eks kan minify css og js og meget mere.
+
+

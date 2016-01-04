@@ -30,8 +30,7 @@ require('./routes/users.js')(router, mongoose, User);
 require('./routes/post.js')(router, mongoose, Post);
 require('./routes/authenticate.js')(passport);
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
+
 app.use(logger('dev'));
 app.use(session({
   secret: 'keyboard cat',
@@ -62,7 +61,6 @@ app.get('/', function(req, res){
 
 
 //Test om der er forbindelse til API
-
 router.get('/', function(req, res) {
 	res.json({ message: 'Apiet virker, der er hul igennem du'});
 });
