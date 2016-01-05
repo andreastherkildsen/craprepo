@@ -1,3 +1,5 @@
+#AngularJS
+
 Angular:
 	- Et framework for dynamiske apps.
 	- Lader en burge HTML som templating sprog og udvider HTMLs syntax.
@@ -49,11 +51,12 @@ Dependency Injection:
 
 
 --------------------------------------------------------------------------
-Backend
+#Backend
 ----------
 
 Node.js:
 	- Server-side Javascript environment.
+	- Eventdriven, venter aldrig på svar fra API, kan tage mange Requests og Responde instant. 
 	- Cross-platform.
 
 Express.js:
@@ -76,7 +79,7 @@ HTTP:
 
 
 --------------------------------------------------------------------------
-Data
+#Database
 ----------
 
 MongoDB:
@@ -103,7 +106,7 @@ Models:
 
 
 --------------------------------------------------------------------------
-Diverse
+#Package managers og build tools
 ----------
 
 NPM:
